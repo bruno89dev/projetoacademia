@@ -1,0 +1,20 @@
+@model IEnumerable<ProjetoAcademia.Models.Cliente>
+
+@{
+    ViewData["Title"] = "ProjetoAcademia - Index";
+}
+
+<h2>Clientes Cadastrados</h2>
+<p></p>
+<a href="/Cliente/Cadastrar" class="btn btn-info">Novo Cadastro</a>
+<hr>
+
+@foreach (Cliente cliente in Model){
+    <p>Id: @cliente.Id</p>
+    <p>Nome: @cliente.Nome</p>
+    <p>E-mail: @cliente.Email</p>
+    <p>Plano: @cliente.Plano</p>
+    <a href="/Cliente/Editar/@cliente.Id" class="btn btn-info">Editar Cadastro</a>
+    <a href="/Cliente/Deletar/@cliente.Id" class="btn btn-danger">Deletar Cadastro</a>
+    <hr>
+}

@@ -1,0 +1,31 @@
+@model ProjetoAcademia.Models.Cliente
+
+@{
+    ViewData["Title"] = "ProjetoAcademia - Cadastro";
+}
+
+<div class="text-center">
+    <h1>Cadastre-se</h1>
+</div>
+
+<form class="form-cadastro" asp-controller="Cliente" asp-action="Salvar" method="POST">
+
+<p>
+<input type="hidden" asp-for="Id" method="GET"></p>
+
+<p>Digite seu nome
+<input class="form-dados" type="text" asp-for="Nome" placeholder="Nome"></p>
+
+<p>Digite seu e-mail
+<input class="form-dados" type="text" asp-for="Email" placeholder="exemplo@email.com"></p>
+
+<p>Escolha o seu plano
+<select class="select-plano" name="select" asp-for="Plano">
+  <option value="mensal">Mensal</option>
+  <option value="semestral" selected>Semestral</option>
+  <option value="anual">Anual</option>
+</select></p>
+
+
+<p><button class="btn btn-info">Cadastrar</button>
+</form></p>
